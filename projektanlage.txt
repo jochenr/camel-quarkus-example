@@ -1,0 +1,17 @@
+mvn io.quarkus:quarkus-maven-plugin:2.9.1.Final:create -DprojectGroupId=de.jochenr.camel-quarkus-example -DprojectArtifactId=camel-quarkus-example -Dextensions=camel-quarkus-servlet,camel-quarkus-rest,camel-quarkus-rest-openapi,camel-quarkus-openapi-java,camel-quarkus-json-validator,camel-quarkus-attachments,camel-quarkus-log,camel-quarkus-direct,camel-quarkus-jta,camel-quarkus-jms,narayana-jta
+
+
+
+
+statt
+	camel-quarkus-servlet
+das verwenden?
+	camel-quarkus-platform-http
+	https://camel.apache.org/camel-quarkus/2.7.x/reference/extensions/platform-http.html
+	
+	
+	
+	
+	
+
+	
