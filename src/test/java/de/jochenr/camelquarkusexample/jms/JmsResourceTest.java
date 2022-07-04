@@ -5,11 +5,9 @@ import static org.hamcrest.CoreMatchers.is;
 
 import org.junit.jupiter.api.Test;
 
-import io.quarkus.test.common.QuarkusTestResource;
 import io.quarkus.test.junit.QuarkusTest;
 
 @QuarkusTest
-@QuarkusTestResource(AmqArtemisTestResource.class)
 public class JmsResourceTest {
 
     @Test

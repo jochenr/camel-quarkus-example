@@ -69,8 +69,8 @@ public class JmsRouteBuilder extends RouteBuilder {
 			//TODO: testweise mal was an die Queue senden:
 			.setBody(constant("Test JMS Message"))
 
-			.to("jmsxa:queue:Meine_Test_XXNMX_Queue?exchangePattern=InOnly&jmsMessageType=Text")
-			.to("jmsxa:queue:Meine_Test_Queue?exchangePattern=InOnly&jmsMessageType=Text")
+			.to("jms:queue:Meine_Test_XXNMX_Queue?exchangePattern=InOnly&jmsMessageType=Text")
+			.to("jms:queue:Meine_Test_Queue?exchangePattern=InOnly&jmsMessageType=Text")
 
 			.setBody(constant("success"))					
 
