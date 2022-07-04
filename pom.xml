@@ -13,10 +13,11 @@
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <quarkus.platform.artifact-id>quarkus-bom</quarkus.platform.artifact-id>
     <quarkus.platform.group-id>io.quarkus.platform</quarkus.platform.group-id>
-    <quarkus.platform.version>2.9.1.Final</quarkus.platform.version>
+    <quarkus.platform.version>2.10.0.Final</quarkus.platform.version>
     <surefire-plugin.version>3.0.0-M5</surefire-plugin.version>
 	
-	<quarkus-artemis.version>1.0.6</quarkus-artemis.version>
+    <quarkus-pooled-jms.version>1.0.1</quarkus-pooled-jms.version>
+    <quarkus-artemis.version>1.2.0</quarkus-artemis.version>
   </properties>
   <dependencyManagement>
     <dependencies>
@@ -97,6 +98,11 @@
 	<dependency>
 		<groupId>io.quarkiverse.artemis</groupId>
 		<artifactId>quarkus-artemis-jms</artifactId>
+	</dependency>
+	<dependency>
+		<groupId>io.quarkiverse.messaginghub</groupId>
+		<artifactId>quarkus-pooled-jms</artifactId>
+                <version>${quarkus-pooled-jms.version}</version>
 	</dependency>
 
 	<!-- https://access.redhat.com/documentation/en-us/red_hat_build_of_quarkus/quarkus-2-7/guide/abf0c517-ac1a-495b-8e63-fcb35b1395b5#proc_using-logging-adapters_quarkus-configuring-logging -->
