@@ -11,12 +11,18 @@
     <maven.compiler.release>11</maven.compiler.release>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-    <quarkus.platform.artifact-id>quarkus-bom</quarkus.platform.artifact-id>
+    
     <quarkus.platform.group-id>io.quarkus.platform</quarkus.platform.group-id>
-    <quarkus.platform.version>2.9.1.Final</quarkus.platform.version>
+    <quarkus.platform.artifact-id>quarkus-bom</quarkus.platform.artifact-id>    
+    <quarkus.platform.version>2.13.5.Final</quarkus.platform.version>
+    <!--
+    <quarkus.platform.group-id>com.redhat.quarkus.platform</quarkus.platform.group-id>
+    <quarkus.platform.artifact-id>quarkus-bom</quarkus.platform.artifact-id>
+    <quarkus.platform.version>2.13.5.Final-redhat-00002</quarkus.platform.version>
+    -->
     <surefire-plugin.version>3.0.0-M5</surefire-plugin.version>
-	
-	<quarkus-artemis.version>1.0.6</quarkus-artemis.version>
+    <quarkus-pooled-jms.version>1.0.7</quarkus-pooled-jms.version>
+	  <quarkus-artemis.version>2.0.4</quarkus-artemis.version>
   </properties>
   <dependencyManagement>
     <dependencies>
@@ -34,13 +40,18 @@
         <type>pom</type>
         <scope>import</scope>
       </dependency>
-	  <dependency>
-			<groupId>io.quarkiverse.artemis</groupId>
-			<artifactId>quarkus-artemis-bom</artifactId>
-			<version>${quarkus-artemis.version}</version>
-			<type>pom</type>
-			<scope>import</scope>
-		</dependency>
+      <dependency>
+        <groupId>io.quarkiverse.messaginghub</groupId>
+        <artifactId>quarkus-pooled-jms</artifactId>
+        <version>${quarkus-pooled-jms.version}</version>        
+      </dependency>
+      <dependency>
+        <groupId>io.quarkiverse.artemis</groupId>
+        <artifactId>quarkus-artemis-bom</artifactId>
+        <version>${quarkus-artemis.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
     </dependencies>
   </dependencyManagement>
   <dependencies>
@@ -94,6 +105,10 @@
 		<groupId>io.quarkus</groupId>
 		<artifactId>quarkus-narayana-jta</artifactId>
 	</dependency>
+  <dependency>
+    <groupId>io.quarkiverse.messaginghub</groupId>
+    <artifactId>quarkus-pooled-jms</artifactId>
+  </dependency>
 	<dependency>
 		<groupId>io.quarkiverse.artemis</groupId>
 		<artifactId>quarkus-artemis-jms</artifactId>
@@ -110,17 +125,24 @@
 		<artifactId>awaitility</artifactId>
 		<scope>test</scope>
 	</dependency>
+  <!--
 	<dependency>
 		<groupId>org.apache.activemq</groupId>
 		<artifactId>artemis-server</artifactId>
 		<scope>test</scope>
 	</dependency>
+  -->
+  <dependency>
+    <groupId>io.quarkiverse.artemis</groupId>
+    <artifactId>quarkus-test-artemis</artifactId>
+    <scope>test</scope>
+  </dependency>
 	
-    <dependency>
-      <groupId>io.quarkus</groupId>
-      <artifactId>quarkus-junit5</artifactId>
-      <scope>test</scope>
-    </dependency>
+  <dependency>
+    <groupId>io.quarkus</groupId>
+    <artifactId>quarkus-junit5</artifactId>
+    <scope>test</scope>
+  </dependency>
 	<dependency>
 		<groupId>io.rest-assured</groupId>
 		<artifactId>rest-assured</artifactId>
