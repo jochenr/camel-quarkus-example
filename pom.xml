@@ -11,17 +11,16 @@
     <maven.compiler.release>11</maven.compiler.release>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-    
+    <!--
     <quarkus.platform.group-id>io.quarkus.platform</quarkus.platform.group-id>
     <quarkus.platform.artifact-id>quarkus-bom</quarkus.platform.artifact-id>    
     <quarkus.platform.version>2.13.5.Final</quarkus.platform.version>
-    <!--
+    -->
     <quarkus.platform.group-id>com.redhat.quarkus.platform</quarkus.platform.group-id>
     <quarkus.platform.artifact-id>quarkus-bom</quarkus.platform.artifact-id>
-    <quarkus.platform.version>2.13.5.Final-redhat-00002</quarkus.platform.version>
-    -->
-    <surefire-plugin.version>3.0.0-M5</surefire-plugin.version>
-    <quarkus-pooled-jms.version>1.0.7</quarkus-pooled-jms.version>
+    <quarkus.platform.version>2.13.5.SP1-redhat-00002</quarkus.platform.version>
+    
+    <surefire-plugin.version>3.0.0-M7</surefire-plugin.version>
 	  <quarkus-artemis.version>2.0.4</quarkus-artemis.version>
   </properties>
   <dependencyManagement>
@@ -39,11 +38,6 @@
         <version>${quarkus.platform.version}</version>
         <type>pom</type>
         <scope>import</scope>
-      </dependency>
-      <dependency>
-        <groupId>io.quarkiverse.messaginghub</groupId>
-        <artifactId>quarkus-pooled-jms</artifactId>
-        <version>${quarkus-pooled-jms.version}</version>        
       </dependency>
       <dependency>
         <groupId>io.quarkiverse.artemis</groupId>

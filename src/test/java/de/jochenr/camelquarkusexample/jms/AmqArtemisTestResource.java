@@ -15,6 +15,10 @@ import io.quarkus.test.common.QuarkusTestResourceLifecycleManager;
 
 public class AmqArtemisTestResource implements QuarkusTestResourceLifecycleManager {
 
+
+    // TODO: evtl. mittlerweile besser damit?:
+    // https://quarkiverse.github.io/quarkiverse-docs/quarkus-artemis/dev/index.html#_test_framework
+
     private EmbeddedActiveMQ embedded;
 
     @Override
