@@ -43,9 +43,10 @@ public class JmsRouteBuilder extends RouteBuilder {
 
 
         onException(Exception.class)
-	        .handled(true)
+	        .handled(false)
 	        .markRollbackOnly()
-	        .setHeader(Exchange.HTTP_RESPONSE_CODE, constant(500))	        
+	        .setHeader(Exchange.HTTP_RESPONSE_CODE, constant(500))	   
+			.setBody(constant("FAILED"))     
 	        ;
 
 		
@@ -74,7 +75,7 @@ public class JmsRouteBuilder extends RouteBuilder {
 
 			.setBody(constant("success"))					
 
-//			.process(ex -> {throw new RuntimeException("absicht");})
+			// .process(ex -> {throw new RuntimeException("absicht");})
 
         ;
 
